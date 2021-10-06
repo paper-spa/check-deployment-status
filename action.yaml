@@ -1,4 +1,4 @@
-name: 'Pages Check Deployment Status'
+name: 'Check Deployment Status'
 description: 'A simple GitHub Action for producing Jekyll build artifacts compatible with GitHub Pages'
 runs:
   using: 'docker'
