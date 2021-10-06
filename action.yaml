@@ -1,0 +1,9 @@
+name: 'Pages Check Deployment Status'
+description: 'A simple GitHub Action for producing Jekyll build artifacts compatible with GitHub Pages'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  inputs:
+  status_url:
+    description: 'URL to query'
+    required: true
