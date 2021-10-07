@@ -1,5 +1,3 @@
-FROM ubuntu:latest
+FROM curlimages/curl:latest
 COPY . /app
-RUN apt-get update && apt-get install -y curl
-
 ENTRYPOINT ["/app/entrypoint.sh"]
