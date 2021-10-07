@@ -13,9 +13,8 @@ while true; do
     fi
     if [[ ($i == 10) ]]; then
         echo "Build failed!"
-        break
+        exit 1
     fi
     i=$((i+1))
     sleep 10
-    break
 done 
