@@ -4,6 +4,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   inputs:
-  status_url:
-    description: 'URL to query'
-    required: true
+    status_url:
+      description: 'URL to query'
+      required: true
