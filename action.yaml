@@ -7,3 +7,6 @@ inputs:
   status_url:
     description: 'URL to query'
     required: true
+  token: 
+    description: 'GitHub token'
+    required: true
