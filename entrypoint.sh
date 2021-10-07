@@ -6,6 +6,8 @@ while true; do
         echo "1"
         break
     fi
+    echo "test: "
+    echo $RESP
     sleep 1 
     break 
 done 
