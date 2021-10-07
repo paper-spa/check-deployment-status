@@ -11,7 +11,7 @@ while true; do
     else
         echo "Current status is $STATUS"
     fi
-    if [[ (($i == 10)) ]]; then
+    if (($i == 10)); then
         echo "Build failed!"
         exit 1
     fi
