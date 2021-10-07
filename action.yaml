@@ -11,6 +11,6 @@ inputs:
     description: 'GitHub token'
     required: true
   timeout:
-    description: 'Number of one second timeouts'
+    description: 'Number of ten second timeouts'
     required: false
-    default: 600
+    default: 60
