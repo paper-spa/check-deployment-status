@@ -3,7 +3,7 @@ i=1
 while true; do 
     RESP=$(curl --header "Authorization: Bearer $INPUT_TOKEN" $INPUT_STATUS_URL)
     STATUS=$(jq -n "$RESP" | jq .status)
-    if [[ $STATUS == "succeed" ]]; then
+    if [ $STATUS = "succeed" ]; then
         echo "Build finished, with status!"
         exit 0
     else
