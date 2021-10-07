@@ -2,12 +2,19 @@
 
 while true; do 
     echo $INPUT_STATUS_URL
+    i=1
     RESP=$(curl --header "Authorization: Bearer $INPUT_TOKEN" $INPUT_STATUS_URL)
-    jq -n "$RESP" | jq .status
-    # if [ .jq .status "$RESP" == '{ "status": "deployment_queued" }' ]; then
-    #     echo "this works!"
-    #     break
-    # fi
-    sleep 1 
+    STATUS=$(jq -n "$RESP" | jq .status)
+    echo $STATUS
+    if [$STATUS == "succeed"]; then
+        echo "Build finished, with status!"
+        break
+    fi
+    if [i == 10]; then
+        echo "Build failed!"
+        break
+    fi
+    i=$((i+1))
+    sleep 10
     break
 done 
