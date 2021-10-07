@@ -1,7 +1,8 @@
 #!/bin/sh
 
 while true; do 
-    RESP=$(curl $INPUT_STATUS_URL)
+    echo $INPUT_STATUS_URL
+    RESP=$(curl -I $INPUT_STATUS_URL)
     if [ "$RESP" == "1" ]; then
         echo "1"
         break
