@@ -14,5 +14,5 @@ while true; do
         exit 1
     fi
     i=$((i+1))
-    sleep 10
+    sleep 1
 done 
