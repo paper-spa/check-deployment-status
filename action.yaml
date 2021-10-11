@@ -13,4 +13,4 @@ inputs:
   timeout:
     description: 'Number of ten second timeouts'
     required: false
-    default: 600
+    default: 3600
