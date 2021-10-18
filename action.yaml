@@ -1,8 +1,8 @@
 name: 'Check Deployment Status'
 description: 'A simple GitHub Action for producing Jekyll build artifacts compatible with GitHub Pages'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'node12'
+  main: 'index.js'
 inputs:
   status_url:
     description: 'URL to query'
@@ -11,6 +11,6 @@ inputs:
     description: 'GitHub token'
     required: true
   timeout:
-    description: 'Number of ten second timeouts'
+    description: 'Number of one second timeouts'
     required: false
     default: 3600
