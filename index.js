@@ -1,5 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+import fetch from "node-fetch";
+
 async function check() {
     try {
         const api_token = core.getInput('token');
@@ -25,4 +27,6 @@ async function check() {
     }
 }
 
-check();
+check().then(() => {
+    console.log('done');
+});
