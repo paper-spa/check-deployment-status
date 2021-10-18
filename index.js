@@ -8,6 +8,7 @@ async function check() {
         const url = core.getInput('status_url');
         const timeout = core.getInput('timeout');
         var tries = 0;
+        var error_count = 0;
         while (tries < timeout) {
             tries++;
             await new Promise(r => setTimeout(r, 1000));
@@ -17,8 +18,20 @@ async function check() {
                 }
             });
 
-            if (res.status == 200) {
-                console.log(res.data.status);
+            if (res.data.status == "succeed") {
+                console.log("Reported success!");
+                break;
+            } else {
+                console.log("Current status: " + res.data.status);
+            }
+
+            if (res.status != 200) {
+                error_count++;
+            }
+
+            if (error_count > 10) {
+                console.log("Too many errors, aborting!");
+                core.setFailed("Failed with status code: " + res.status)
                 break;
             }
         }
