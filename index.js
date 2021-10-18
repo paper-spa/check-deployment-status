@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const fetch = require('node-fetch');
+const axios = require('axios');
 
 async function check() {
     try {
@@ -11,7 +11,7 @@ async function check() {
         while (tries < timeout) {
             tries++;
             await new Promise(r => setTimeout(r, 1000));
-            var res = await fetch(url, {
+            var res = await axios.get(url, {
                 headers: {
                     'Authorization': `token ${api_token}`
                 }
