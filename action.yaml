@@ -2,7 +2,7 @@ name: 'Check Deployment Status'
 description: 'A simple GitHub Action for producing Jekyll build artifacts compatible with GitHub Pages'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'runner.js'
 inputs:
   status_url:
     description: 'URL to query'
@@ -14,3 +14,12 @@ inputs:
     description: 'Number of one second timeouts'
     required: false
     default: 3600
+  error_count:
+    description: 'Number of errors allowed'
+    required: false
+    default: 10
+  timeout_duration:
+    description: 'Number of milisecond to wait for a timeout'
+    required: false
+    default: 1000
+
