@@ -30,6 +30,13 @@ async function check() {
             } else {
                 console.log("Current status: " + res.data.status);
             }
+            
+            if (res.data.status == "failed") {
+
+                console.log("Reported failed!");
+                core.setOutput("status", "failed");
+                break;
+            }
 
             if (res.status != 200) {
                 error_count++;
